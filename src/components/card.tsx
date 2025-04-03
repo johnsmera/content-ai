@@ -15,11 +15,11 @@ export const Card = () => {
 			</div>
 			<div className="p-6">
 				<h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3">
-					News Title
+					Devs bons nunca foram bons apenas por digitar código
 				</h2>
 				<p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-					This is a brief description of the news content. It provides an
-					overview of the topic.
+					Pensamento crítico, resiliência e criatividade. A capacidade de
+					resolver problemas complexos e pensar fora da caixa.
 				</p>
 				<Link
 					href="#"
