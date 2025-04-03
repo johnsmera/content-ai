@@ -14,10 +14,16 @@ export const Card = () => {
 				/>
 			</div>
 			<div className="p-6">
-				<h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3">
-					Devs bons nunca foram bons apenas por digitar código
+				<h2
+					className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-3 line-clamp-2"
+					style={{ overflow: "hidden", display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitLineClamp: 2 }}
+				>
+					Devs bons não são apenas bons por codar
 				</h2>
-				<p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+				<p
+					className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 line-clamp-3"
+					style={{ overflow: "hidden", display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitLineClamp: 3 }}
+				>
 					Pensamento crítico, resiliência e criatividade. A capacidade de
 					resolver problemas complexos e pensar fora da caixa.
 				</p>
