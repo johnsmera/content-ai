@@ -1,6 +1,9 @@
+import { listPostsService } from "@/services/listPostsService";
 import { CardGrid } from "@/views/card-grid";
 
-export default function Home() {
+export default async function Home() {
+	const posts = await listPostsService(1, 10);
+
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex justify-center relative overflow-hidden">
 			<div className="absolute inset-0 pointer-events-none">
@@ -9,7 +12,7 @@ export default function Home() {
 				<div className="absolute top-10 right-10 w-48 h-48 bg-pink-500 opacity-10 blur-2xl rounded-full" />
 			</div>
 
-			<CardGrid />
+			<CardGrid posts={posts} />
 		</div>
 	);
 }

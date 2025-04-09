@@ -8,7 +8,7 @@ type CardImageProps = {
 export const CardImage = ({ src, alt }: CardImageProps) => {
 	return (
 		<div className="relative h-48">
-			<Image src={src} alt={alt} fill className="object-cover" />
+			<Image src={src} alt={alt} fill className="object-cover" priority />
 		</div>
 	);
 };
