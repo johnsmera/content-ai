@@ -5,9 +5,15 @@ import { CardFooter } from "@/components/card/card-footer";
 import { CardImage } from "@/components/card/card-image";
 import { CardTitle } from "@/components/card/card-title";
 import { Link } from "@/components/link/link";
-import type { Database } from "@/types/supabase";
 
-type Post = Database["public"]["Tables"]["posts"]["Row"];
+type Post = {
+	content: string;
+	created_at: string;
+	id: string;
+	image_url: string;
+	resume: string;
+	title: string;
+};
 
 type Props = {
 	posts: Post[];
@@ -29,11 +35,10 @@ export const CardGrid = ({ posts }: Props) => {
 			</div>
 		);
 	};
-	return (
-		<div className="p-6">
-			{renderHeader()}
 
-			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+	const renderCards = () => {
+		return (
+			<>
 				{posts.map((post) => (
 					<Card key={post.id}>
 						<CardImage src={post.image_url} alt="Tecnologia" />
@@ -47,7 +52,19 @@ export const CardGrid = ({ posts }: Props) => {
 						</CardFooter>
 					</Card>
 				))}
+			</>
+		);
+	};
+
+	return (
+		<div className="p-6">
+			{renderHeader()}
+
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+				{renderCards()}
 			</div>
 		</div>
 	);
 };
+
+export default CardGrid;
